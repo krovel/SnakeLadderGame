@@ -5,6 +5,7 @@ public class SnakeLadderGame {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the game");
 		int pos = 0;
+		while(pos < 100) {
 		int dice_value = (int) Math.floor(Math.random()*10)%6 +1;
 		System.out.println("Number on the dice: "+dice_value);
 		int opt = (int) Math.floor(Math.random()*10)%3;
@@ -15,7 +16,12 @@ public class SnakeLadderGame {
 			pos += dice_value;
 		}
 		else if(opt == snake) {
-			pos -= dice_value;
+			if(pos-dice_value > 0)
+			 pos -= dice_value;
+			else
+				pos = 0;
 		}
+		}
+		System.out.println("Player's final position: "+pos);
 	}
 }
