@@ -13,7 +13,8 @@ public class SnakeLadderGame {
 			System.out.println("Player remains at the same position");
 		}
 		else if(opt == ladder) {
-			pos += dice_value;
+			if(pos+dice_value <=100)
+				pos += dice_value;
 		}
 		else if(opt == snake) {
 			if(pos-dice_value > 0)
