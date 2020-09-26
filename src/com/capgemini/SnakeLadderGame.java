@@ -4,9 +4,10 @@ public class SnakeLadderGame {
 	public static int noPlay =0,ladder = 1,snake =2;
 	public static void main(String[] args) {
 		System.out.println("Welcome to the game");
-		int pos = 0;
+		int pos = 0, no_of_turns =0;
 		while(pos < 100) {
 		int dice_value = (int) Math.floor(Math.random()*10)%6 +1;
+		no_of_turns ++;
 		System.out.println("Number on the dice: "+dice_value);
 		int opt = (int) Math.floor(Math.random()*10)%3;
 		if(opt == noPlay) {
@@ -22,7 +23,9 @@ public class SnakeLadderGame {
 			else
 				pos = 0;
 		}
+		System.out.println("Position of player: "+pos);
 		}
 		System.out.println("Player's final position: "+pos);
-	}
+		System.out.println("Number of times the dice rolled is: "+no_of_turns);
+	}	
 }
